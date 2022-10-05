@@ -1,0 +1,27 @@
+.header_outer {
+    display: grid;
+}
+
+.layer_1 {
+    grid-column: 1;
+    grid-row: 1; 
+    
+}
+
+.svg_color {
+    fill: #65E9EE9E;
+}
+
+header {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+header img {
+    width: 15%;
+}
+
