@@ -1,15 +1,20 @@
-import React from 'react';
-import Body from './Body';
-import Gallery from './Gallery';
-import '../src/styles/App.css'
-import Header from './Header';
+import "../src/styles/App.css";
+
+import { Routes, Route } from "react-router-dom";
+import Home from "./Home"
+import Gallery from "./Gallery";
+
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Body />
-      <Gallery />
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        {/* <Route path="/fun-around-the-resort" element={<FunAroundTheResort />} /> */}
+        <Route path="/gallery" element={<Gallery />} />
+        {/* <Route path="/history-of-the-lake" element={<HistoryOfTheLake />} /> */}
+        {/* <Route path="/rates" element={<Rates />} /> */}
+      </Routes>
     </div>
   );
 }

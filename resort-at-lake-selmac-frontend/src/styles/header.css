@@ -21,7 +21,40 @@ header {
     gap: 20px;
 }
 
-header img {
+.logo {
     width: 15%;
 }
 
+.links {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    text-align: center;
+    font-size: 26px;
+}
+
+.links a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit;
+}
+
+.tepee img {
+    opacity: 0;
+    width: 5%;
+}
+
+.span_1:hover img {
+    opacity: 1
+}
+
+.span_2:hover img {
+    opacity: 1
+}
+
+.span_3:hover img {
+    opacity: 1
+}
+
+.span_4:hover img {
+    opacity: 1
+}

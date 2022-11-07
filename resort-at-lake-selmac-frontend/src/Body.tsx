@@ -3,19 +3,21 @@ import '../src/styles/body.css'
 import img1 from '../src/assets/rob_img_2.jpeg'
 import img2 from '../src/assets/rob_img_3.jpeg'
 import img3 from '../src/assets/rob_img_4.jpeg'
+import top from '../src/assets/Top.png'
 
 function Body() {
     return (
         <div className='body_content'>
-           <p> Located in beautiful southern Oregon just over the California state line is the resort at Lake sell Mac this lake has a great fishing and is stocked annually with trout you can fish largemouth bash catfish bluegill crappy perch and pan fish and Oregon record bass has been caught in lake sell Mac.</p> 
+            <img src={top} alt='resort at lake selmac store front' />
+           <p className='first_paragraph'> Located in beautiful southern Oregon just over the California state line is the resort at Lake sell Mac this lake has a great fishing and is stocked annually with trout you can fish largemouth bash catfish bluegill crappy perch and pan fish and Oregon record bass has been caught in lake sell Mac.</p> 
            <h2>A great place for family reunions and events</h2>
            <p>Lake Selmac offers a lot of outdoor activities to all ages hiking boating fishing and relaxing ask us about your event</p>
 
            <h2>Country store</h2>
-           <p>the store is well stocked and conveniently located within walking distance from all our campsites you’ll find firewood and kindling coffee ice cold beer and beverages wine fishing bait tackle and day fishing licenses we have a lot of your favorite snacks candy and meals as well as camping supplies kites and fun water toys boat and watercraft rentals are available here too feel free to visit us and ask about our local activities and places to visit nearby</p>
+           <p>The store is well stocked and conveniently located within walking distance from all our campsites you’ll find firewood and kindling coffee ice cold beer and beverages wine fishing bait tackle and day fishing licenses we have a lot of your favorite snacks candy and meals as well as camping supplies kites and fun water toys boat and watercraft rentals are available here too feel free to visit us and ask about our local activities and places to visit nearby</p>
            <img src={img1} alt='lake shot' />
            <h2>Campsites</h2>
-           <p>available for reservations are two cabins three teepees a total of 29 RV/tent sites 11 of those are pull through as a 50 amp electricity service dump station for five dollars wireless Internet bathrooms hot showers and laundry facilities our prices are very reasonable take a look at our rights</p>
+           <p>Available for reservations are two cabins three teepees a total of 29 RV/tent sites 11 of those are pull through as a 50 amp electricity service dump station for five dollars wireless Internet bathrooms hot showers and laundry facilities our prices are very reasonable take a look at our rights</p>
            <img src={img2} alt='lake shot' />
             <h2>Rentals</h2>
             <p>we also rent boats with a trolling major stand up paddleboard‘s paddle boats and kayaks our prices are listed on our rights page there’s more to do than fish go play on the frisbee disc golf course bike or hike the groomed trail around Lake Selnick take a day for local attractions like the Oregon caves great cats world park or go winetasting at Forest Vineyards winery and Augustino estate vineyards for a taste of the community</p>

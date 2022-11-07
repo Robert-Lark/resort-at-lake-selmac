@@ -1,7 +1,7 @@
 import React from 'react';
 import '../src/styles/gallery.css';
 import "../node_modules/react-image-gallery/styles/css/image-gallery.css";
-import ImageGallery, { ReactImageGalleryItem } from 'react-image-gallery';
+import ImageGallery from 'react-image-gallery';
 
 import image1 from '../src/assets/IMG_3860.jpg'
 import image2 from '../src/assets/IMG_4043.jpg'
