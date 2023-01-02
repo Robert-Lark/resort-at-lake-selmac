@@ -1,4 +1,4 @@
-import "../src/styles/App.css";
+import "./styles/home.css";
 
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home"
@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         {/* <Route path="/fun-around-the-resort" element={<FunAroundTheResort />} /> */}
         <Route path="/gallery" element={<Gallery />} />
         {/* <Route path="/history-of-the-lake" element={<HistoryOfTheLake />} /> */}

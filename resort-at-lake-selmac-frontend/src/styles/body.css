@@ -21,7 +21,12 @@ img {
     align-items: center;
 }
 
-.first_paragraph {
+.large_paragraph {
 text-align: center;
 font-size: 26px;
 }
+
+.small_paragraph {
+    text-align: center;
+    font-size: 18px;
+    }

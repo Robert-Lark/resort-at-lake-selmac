@@ -1,56 +1,205 @@
-import React from 'react';
-import '../src/styles/body.css'
-import img1 from '../src/assets/rob_img_2.jpeg'
-import img2 from '../src/assets/rob_img_3.jpeg'
-import img3 from '../src/assets/rob_img_4.jpeg'
-import top from '../src/assets/Top.png'
+import { useQuery, gql } from "@apollo/client";
+import "../src/styles/body.css";
+import img1 from "../src/assets/rob_img_2.jpeg";
+import img2 from "../src/assets/rob_img_3.jpeg";
+import teepees from "../src/assets/teepees.jpeg";
+import img3 from "../src/assets/rob_img_4.jpeg";
+import top from "../src/assets/Top.png";
+
+const GET_HOME_QUERY = gql`
+  query GetAllHomePage {
+    allHomePage {
+      Image1 {
+        asset {
+          url
+        }
+      }
+      heading1
+      heading2
+      content1Raw
+      heading3
+      image2 {
+        asset {
+          url
+        }
+      }
+      content2Raw
+      heading4
+      image4 {
+        asset {
+          url
+        }
+      }
+      content4Raw
+      heading5
+      image5 {
+        asset {
+          url
+        }
+      }
+      content5Raw
+      heading6
+      image6 {
+        asset {
+          url
+        }
+      }
+      content6Raw
+      heading7
+      image7 {
+        asset {
+          url
+        }
+      }
+      content7Raw
+      heading8
+      image8 {
+        asset {
+          url
+        }
+      }
+      content8Raw
+    }
+  }
+`;
 
 function Body() {
-    return (
-        <div className='body_content'>
-            <img src={top} alt='resort at lake selmac store front' />
-           <p className='first_paragraph'> Located in beautiful southern Oregon just over the California state line is the resort at Lake sell Mac this lake has a great fishing and is stocked annually with trout you can fish largemouth bash catfish bluegill crappy perch and pan fish and Oregon record bass has been caught in lake sell Mac.</p> 
-           <h2>A great place for family reunions and events</h2>
-           <p>Lake Selmac offers a lot of outdoor activities to all ages hiking boating fishing and relaxing ask us about your event</p>
+  const { loading, error, data } = useQuery(GET_HOME_QUERY);
 
-           <h2>Country store</h2>
-           <p>The store is well stocked and conveniently located within walking distance from all our campsites you’ll find firewood and kindling coffee ice cold beer and beverages wine fishing bait tackle and day fishing licenses we have a lot of your favorite snacks candy and meals as well as camping supplies kites and fun water toys boat and watercraft rentals are available here too feel free to visit us and ask about our local activities and places to visit nearby</p>
-           <img src={img1} alt='lake shot' />
-           <h2>Campsites</h2>
-           <p>Available for reservations are two cabins three teepees a total of 29 RV/tent sites 11 of those are pull through as a 50 amp electricity service dump station for five dollars wireless Internet bathrooms hot showers and laundry facilities our prices are very reasonable take a look at our rights</p>
-           <img src={img2} alt='lake shot' />
-            <h2>Rentals</h2>
-            <p>we also rent boats with a trolling major stand up paddleboard‘s paddle boats and kayaks our prices are listed on our rights page there’s more to do than fish go play on the frisbee disc golf course bike or hike the groomed trail around Lake Selnick take a day for local attractions like the Oregon caves great cats world park or go winetasting at Forest Vineyards winery and Augustino estate vineyards for a taste of the community</p>
-            <h2>Call for reservations and information to make a reservation call the resort at 541-597-2277</h2>
-            <ul>
-                <li>RV park</li>
-                <li>tent camping</li>
-                <li>cabins and teepees available</li>
-                <li>full-service country store </li>
-                <li> RV sites with 13 pool throws</li>
-                <li>tent camping sites with electric and water</li>
-                <li>well shaded camping sites</li>
-                <li>wireless Internet service</li>
-                <li>50 amp service</li>
-                <li>bathrooms with clean hot showers</li>
-                <li>laundry room</li>
-                <li>fire rings</li>
-                <li>picnic tables</li>
-                <li>volleyball court</li>
-                <li>tetherball pole</li>
-                <li>oh shoot pets</li>
-                <li>pets welcome no aggressive dogs allowed</li>
-                <li> Disculpe in walking distance of the resort</li>
-            </ul>
-            <img src={img3} alt='lake shot' />
-            <h2>Family owned and managed again!</h2>
-            <p>Vince and Shannon are running the resort at Lake Selmac and intend on providing a safe quaint and family friendly resort along this cherish lake sell Mac near Cave Junction and has no longer smoke on the water the local community is thrilled to have the family back</p>
-            <h2>Resort at Lake Selmac: where you can catch sizable largemouth bass</h2>
-            <p>Salmac like it’s not a big lake but has a splendid amount of sizable largemouth bass the southern Oregon Reservoir located 20 miles south west of grants Pass is stocked annually with rainbow trout and has plenty of pound fish in the resort at Lake Selnick also known as Lake Salmac resort has been a favorite outdoor adventure and camping destinations for generations families return annual leave for boating fishing hiking biking swimming and just playing relaxing it’s a great location for family reunions class reunions and events</p>
-            <h2>Many things to do are just a short drive away</h2>
-            <p>visit the Oregon caves national monument and preserve take a jet by boat ride town the wild and scenic rogue River out of grants Pass 20 miles away with Hellgate excursions take a guided tour at the amazing great cats of the world park a wildcat reserve here in Cave Junction taste gold medal wines from this region at forest vineyards winery and have an incredible experience tasting wines in a treehouse tasting room overlooking a beautiful lake at Augustino estate and Vineyards just to name a few adventures you can have if you want to explore the local attractions </p>
-        </div>
-    );
+  const fallbacks = {
+    heading1:
+      "Located in beautiful southern Oregon just over the California state line is the resort at Lake sell Mac this lake has a great fishing and is stocked annually with trout you can fish largemouth bash catfish bluegill crappy perch and pan fish and Oregon record bass has been caught in lake sell Mac.",
+    heading2: "A great place for family reunions and events",
+    content1Raw:
+      "Lake Selmac offers a lot of outdoor activities to all ages, hiking, boating, fishing and relaxing. Ask us about your event.",
+    heading3: "COUNTRY STORE",
+    content2Raw:
+      "The store is well stocked and conveniently located within walking distance from all our campsites. You’ll find firewood and kindling, coffee, ice cold beer and beverages, wine, fishing bait, tackle, and day fishing licenses. We have a lot of your favorite snacks, candy, and meals, as well as, camping supplies, kites, and fun water toys. Boat and watercraft rentals are available here too. Feel free to visit us and ask about local activities and places to visit nearby.",
+    heading4: "CAMPSITES",
+    content4Raw:
+      "Available for reservations are 2 cabins, 3 tipis, a total of 29 RV/tent sites, 11 of those are pull throughs, a 50 amp electricity service, dump station ($5) , wireless internet, bathrooms, hot showers, and laundry facility.  Our prices are very reasonable. Take a look at our rates.",
+    heading5: "RENTALS",
+    content5Raw:
+      "We also rent boats with a trolling motor, stand up paddle boards, pedal boats, and kayaks. Our prices are listed on our rates page. There’s more to do than fish! Go play on the frisbee disc golf course, bike or hike the groomed trail around Lake Selmac. Take a day for local attractions like the Oregon Caves, Great Cats World Park, or go wine tasting at Foris Vineyards Winery and Augustino Estate vineyards for a taste of the community.",
+      heading6: "Family Owned and Managed Again!",
+    content6Raw:
+      "Vince and Shannon are running the resort at Lake Selmac and intend on providing a safe quaint and family friendly resort along this cherish lake sell Mac near Cave Junction and has no longer smoke on the water the local community is thrilled to have the family back",
+      heading7: "Resort at Selmac Lake where you can catch sizable largemouth bass" ,
+      content7Raw:
+      "Selmac Lake is not a big lake, but has a splendid amount of sizable largemouth bass. This southern Oregon reservoir, located 20 miles southwest of Grants Pass, is stocked annually with rainbow trout and has plenty of pan fish. The Resort at Lake Selmac, also known as Lake Selmac Resort, has been a favorite outdoor adventure and camping destination for generations. Families return annually for boating, fishing, hiking, biking, swimming and just plain relaxing. It’s a great location for family reunions, class reunions, and events.",
+      heading8: "Many things to do are just a short drive away" ,
+      content8Raw:
+      "Visit the Oregon Caves National Monument and Preserve, take a jetboat ride down the Wild and Scenic Rogue River out of Grants Pass (20 miles away) with Hellgate Excursions, take a guided tour at the amazing Great Cats of the World Park (a wild cat reserve here in Cave Junction), taste gold medal wines from this region at Foris Vineyards Winery, and have an incredible experience tasting wines in a tree house tasting room overlooking a beautiful lake at Augustinos Estate & Vineyard, just to name a few adventures you can have if you want to explore the local attractions.",
+  };
+
+  if (loading) {
+    return <h1>LOADING</h1>;
+  }
+  const pageData = data.allHomePage[0];
+  
+  function contentReturner(content: any) {
+    return content.map((node: any, i: number) => (
+      <p className="small_paragraph" key={i}>
+        {node.children[0].text}
+      </p>
+    ));
+  }
+
+  return (
+    <div className="body_content">
+      <img
+        src={pageData.Image1.asset.url ? pageData.Image1.asset.url : top}
+        alt="resort at lake selmac store front"
+      />
+      <p className="large_paragraph">
+        {pageData.heading1 ? pageData.heading1 : fallbacks.heading1}
+      </p>
+      <h2>{pageData.heading2 ? pageData.heading2 : fallbacks.heading2}</h2>
+      <p>
+        {contentReturner(pageData.content1Raw)
+          ? contentReturner(pageData.content1Raw)
+          : fallbacks.content1Raw}
+      </p>
+
+      <h2>{pageData.heading3 ? pageData.heading3 : fallbacks.heading3}</h2>
+      <p>
+        {contentReturner(pageData.content2Raw)
+          ? contentReturner(pageData.content2Raw)
+          : fallbacks.content2Raw}
+      </p>
+      <img
+        src={pageData.image2.asset.url ? pageData.image2.asset.url : img1}
+        alt="lake shot"
+      />
+      <h2>{pageData.heading4 ? pageData.heading4 : fallbacks.heading4}</h2>
+      <p>
+        {contentReturner(pageData.content4Raw)
+          ? contentReturner(pageData.content4Raw)
+          : fallbacks.content4Raw}
+      </p>
+      <img
+        src={pageData.image4.asset.url ? pageData.image4.asset.url : teepees}
+        alt="lake shot"
+      />
+      <h2>{pageData.heading5 ? pageData.heading5 : fallbacks.heading5}</h2>
+      <p>
+        {contentReturner(pageData.content5Raw)
+          ? contentReturner(pageData.content5Raw)
+          : fallbacks.content5Raw}
+      </p>
+      <ul>
+        <li>RV park</li>
+        <li>tent camping</li>
+        <li>cabins and teepees available</li>
+        <li>Full service Country Store </li>
+        <li> RV sites with 13 pull-throughs</li>
+        <li>Tent camping sites with electric and water</li>
+        <li>Well-shaded camping sites</li>
+        <li>Wireless Internet service</li>
+        <li>50 amp service</li>
+        <li>Bathrooms with CLEAN hot showers</li>
+        <li>Laundry room</li>
+        <li>Fire rings</li>
+        <li>Picnic tables</li>
+        <li>Volleyball court</li>
+        <li>Tetherball pole</li>
+        <li>Horseshoe pits</li>
+        <li>Pets welcome (No aggressive dogs allowed)</li>
+        <li>Disc golf in walking distance of the Resort</li>
+      </ul>
+      
+      <h2>{pageData.heading6 ? pageData.heading6 : fallbacks.heading6}</h2>
+      <p>
+        {contentReturner(pageData.content6Raw)
+          ? contentReturner(pageData.content6Raw)
+          : fallbacks.content6Raw}
+      </p>
+      <img
+        src={pageData.image6.asset.url ? pageData.image6.asset.url : img3}
+        alt="lake shot"
+      />
+      <h2>{pageData.heading7 ? pageData.heading7 : fallbacks.heading7}</h2>
+      <p>
+        {contentReturner(pageData.content7Raw)
+          ? contentReturner(pageData.content7Raw)
+          : fallbacks.content7Raw}
+      </p>
+      <img
+        src={pageData.image7.asset.url ? pageData.image7.asset.url : img3}
+        alt="lake shot"
+      />
+      <h2>{pageData.heading8 ? pageData.heading8 : fallbacks.heading8}</h2>
+      <p>
+        {contentReturner(pageData.content7Raw)
+          ? contentReturner(pageData.content7Raw)
+          : fallbacks.content7Raw}
+      </p>
+      <img
+        src={pageData.image8.asset.url ? pageData.image8.asset.url : img3}
+        alt="lake shot"
+      />
+    </div>
+  );
 }
 
 export default Body;

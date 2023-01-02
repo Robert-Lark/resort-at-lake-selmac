@@ -1,6 +1,7 @@
 import Body from './Body';
-import '../src/styles/Home.css'
+import '../src/styles/home.css'
 import Header from './Header';
+
 
 
 function Home() {
