@@ -29,7 +29,7 @@ function Header() {
         <h1>RESORT AT LAKE SELMAC</h1>
       </header>
       <div className="links">
-        <span className="tepee span_1">
+        {/* <span className="tepee span_1">
           <img src={tepee} id="first_tepee" alt="tepee" />
           <a href="/fun-around-the-resort">Fun Around the Resort</a>
           <img src={tepee} id="first_tepee" alt="tepee" />
@@ -51,7 +51,7 @@ function Header() {
           <img src={tepee} id="fourth_tepee" alt="tepee" />
           <a href="/rates">Rates</a>
           <img src={tepee} id="fourth_tepee" alt="tepee" />
-        </span>
+        </span> */}
 
         {/* facebook logo */}
         {/* instagram logo */}
