@@ -58,3 +58,23 @@ header {
 .span_4:hover img {
     opacity: 1
 }
+
+@media (max-width: 480px) {
+    .header {
+        padding-left: 10px;
+        margin-bottom: 20px;
+    }
+    .header h1 {
+        font-size: 1rem;
+    }
+    .links {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+
+.links {
+    font-size: 1rem;
+}
+}

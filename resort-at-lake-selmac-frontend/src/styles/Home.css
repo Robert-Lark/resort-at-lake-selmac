@@ -1,4 +1,9 @@
 .App {
-max-width: 1200px;
-min-width: 1200px;
+    max-width: 1200px;
+}
+@media (max-width: 400px){
+    .App {
+        max-width: 380px;
+        min-width: 380px;
+    }    
 }
