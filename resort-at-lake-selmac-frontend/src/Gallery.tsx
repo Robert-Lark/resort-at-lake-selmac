@@ -123,7 +123,7 @@ const images = [
 
 function Gallery() {
     return (
-        <div className="gallery">
+        <div className="gallery" id='gallery'>
             <ImageGallery items={images} />
         </div>
     );

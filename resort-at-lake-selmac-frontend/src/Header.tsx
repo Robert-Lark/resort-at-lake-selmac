@@ -5,7 +5,7 @@ import tepee from "../src/assets/tepee.png";
 
 function Header() {
   return (
-    <div className="header_outer">
+    <div className="header_outer" id='top'>
       <div className="layer_1">
         <svg viewBox="0 0 1000 100" preserveAspectRatio="none">
           <path
@@ -37,7 +37,7 @@ function Header() {
 
         <span className="tepee span_2">
           <img src={tepee} id="second_tepee" alt="tepee" />
-          <a href="/gallery">Photo Gallery</a>
+          <a href="#store">Country Store</a>
           <img src={tepee} id="second_tepee" alt="tepee" />
         </span>
 
