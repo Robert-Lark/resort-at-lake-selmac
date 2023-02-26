@@ -167,7 +167,11 @@ function Body() {
         <li>Pets welcome (No aggressive dogs allowed)</li>
         <li>Disc golf in walking distance of the Resort</li>
       </ul>
-      
+      <img
+        src={pageData.image5.asset.url ? pageData.image5.asset.url : null}
+        alt="rates"
+        id="rates"
+      />
       <h2>{pageData.heading6 ? pageData.heading6 : fallbacks.heading6}</h2>
       <p>
         {contentReturner(pageData.content6Raw)
@@ -178,7 +182,7 @@ function Body() {
         src={pageData.image6.asset.url ? pageData.image6.asset.url : img3}
         alt="lake shot"
       />
-      <h2>{pageData.heading7 ? pageData.heading7 : fallbacks.heading7}</h2>
+      <h2 id="fishing">{pageData.heading7 ? pageData.heading7 : fallbacks.heading7}</h2>
       <p>
         {contentReturner(pageData.content7Raw)
           ? contentReturner(pageData.content7Raw)
@@ -188,11 +192,11 @@ function Body() {
         src={pageData.image7.asset.url ? pageData.image7.asset.url : img3}
         alt="lake shot"
       />
-      <h2>{pageData.heading8 ? pageData.heading8 : fallbacks.heading8}</h2>
+      <h2 id="todo">{pageData.heading8 ? pageData.heading8 : fallbacks.heading8}</h2>
       <p>
-        {contentReturner(pageData.content7Raw)
-          ? contentReturner(pageData.content7Raw)
-          : fallbacks.content7Raw}
+        {contentReturner(pageData.content8Raw)
+          ? contentReturner(pageData.content8Raw)
+          : fallbacks.content8Raw}
       </p>
       <img
         src={pageData.image8.asset.url ? pageData.image8.asset.url : img3}

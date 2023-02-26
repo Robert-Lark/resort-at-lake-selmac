@@ -1,7 +1,7 @@
 import React from "react";
 import "../src/styles/header.css";
 import logo from "../src/assets/logo.png";
-// import tepee from "../src/assets/tepee.png";
+import tepee from "../src/assets/tepee.png";
 
 function Header() {
   return (
@@ -29,9 +29,9 @@ function Header() {
         <h1>RESORT AT LAKE SELMAC</h1>
       </header>
       <div className="links">
-        {/* <span className="tepee span_1">
+        <span className="tepee span_1">
           <img src={tepee} id="first_tepee" alt="tepee" />
-          <a href="/fun-around-the-resort">Fun Around the Resort</a>
+          <a href="#fishing">Fishing</a>
           <img src={tepee} id="first_tepee" alt="tepee" />
         </span>
 
@@ -43,15 +43,15 @@ function Header() {
 
         <span className="tepee span_3">
           <img src={tepee} id="third_tepee" alt="tepee" />
-          <a href="/history-of-the-lake">History of the Lake</a>
+          <a href="#todo">Explore the Area</a>
           <img src={tepee} id="third_tepee" alt="tepee" />
         </span>
 
         <span className="tepee span_4">
           <img src={tepee} id="fourth_tepee" alt="tepee" />
-          <a href="/rates">Rates</a>
+          <a href="#rates">Rates</a>
           <img src={tepee} id="fourth_tepee" alt="tepee" />
-        </span> */}
+        </span>
 
         {/* facebook logo */}
         {/* instagram logo */}
