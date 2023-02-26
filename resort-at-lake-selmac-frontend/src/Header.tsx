@@ -1,7 +1,7 @@
 import React from "react";
 import "../src/styles/header.css";
 import logo from "../src/assets/logo.png";
-import tepee from "../src/assets/tepee.png";
+// import tepee from "../src/assets/tepee.png";
 
 function Header() {
   return (
