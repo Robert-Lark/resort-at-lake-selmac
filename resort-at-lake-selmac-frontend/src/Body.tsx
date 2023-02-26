@@ -1,7 +1,7 @@
 import { useQuery, gql } from "@apollo/client";
 import "../src/styles/body.css";
 import img1 from "../src/assets/rob_img_2.jpeg";
-import img2 from "../src/assets/rob_img_3.jpeg";
+// import img2 from "../src/assets/rob_img_3.jpeg";
 import teepees from "../src/assets/teepees.jpeg";
 import img3 from "../src/assets/rob_img_4.jpeg";
 import top from "../src/assets/Top.png";
@@ -64,7 +64,7 @@ const GET_HOME_QUERY = gql`
 `;
 
 function Body() {
-  const { loading, error, data } = useQuery(GET_HOME_QUERY);
+  const { loading, data } = useQuery(GET_HOME_QUERY);
 
   const fallbacks = {
     heading1:
