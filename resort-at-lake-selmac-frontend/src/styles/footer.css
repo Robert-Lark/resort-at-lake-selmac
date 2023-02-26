@@ -19,3 +19,18 @@
     height: 150px;
     border-radius: 100%;
 }
+
+@media (max-width: 480px) {
+    .footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    }
+    .footer a  {
+        display: none;
+    }
+
+    .footer img {
+     width: 80%;       
+    }
+}
