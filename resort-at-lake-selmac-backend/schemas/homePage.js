@@ -70,19 +70,169 @@ export default {
   description: 'The Second Red Heading on the Page'
 },
 {
-  name: 'image5',
-title: 'Image five',
+  name: 'content5',
+  title: 'Page text content five',
+  type: 'array', 
+  of: [{type: 'block'}],
+  description: 'Write the body text here'
+  },
+{
+  name: 'rentalImage5',
+title: 'Rentals Image left',
 type: 'image',
 },
 {
-name: 'content5',
-title: 'Page text content five',
-type: 'array', 
-of: [{type: 'block'}],
-description: 'Write the body text here'
+  name: 'heading6',
+  title: 'Left Column Heading',
+  type: 'string', 
+  },
+  {
+    name: 'Additional1',
+    title: 'Aditional Info - this will only be displayed if you enter text:',
+    type: 'string', 
+    },
+{
+  name: 'TentDaily',
+  title: 'Tent Daily Rate',
+  type: 'string', 
+  },
+  {
+    name: 'TentWeekly',
+    title: 'Tent Weekly Rate',
+    type: 'string', 
+    },
+    {
+      name: 'PartialHookupDaily',
+      title: 'Partial Hookup Daily Rate',
+      type: 'string', 
+      },
+      {
+        name: 'PartialHookupWeekly',
+        title: 'Partial Hookup Weekly Rate',
+        type: 'string', 
+        },
+        {
+          name: 'FullHookupDaily',
+          title: 'Full Hookup Daily Rate',
+          type: 'string', 
+          },
+          {
+            name: 'FullHookupWeekly',
+            title: 'Full Hookup Weekly Rate',
+            type: 'string', 
+            },
+            {
+              name: 'CabinDaily',
+              title: 'Cabin Daily Rate',
+              type: 'string', 
+              },
+              {
+                name: 'CabinWeekly',
+                title: 'Cabin Weekly Rate',
+                type: 'string', 
+                },
+                {
+                  name: 'TipiDaily',
+                  title: 'Tipi Daily Rate',
+                  type: 'string', 
+                  },
+                  {
+                    name: 'TipiWeekly',
+                    title: 'Tipi Weekly Rate',
+                    type: 'string', 
+                    },
+                    {
+                      name: 'Additional2',
+                      title: 'Aditional Info - this will only be displayed if you enter text:',
+                      type: 'string', 
+                      },
+{
+  name: 'rentalImage6',
+title: 'Rentals Image middle',
+type: 'image',
 },
 {
-  name: 'heading6',
+  name: 'heading7',
+  title: 'Middle Column Heading',
+  type: 'string', 
+  },
+  {
+    name: 'Additiona3',
+    title: 'Aditional Info - this will only be displayed if you enter text:',
+    type: 'string', 
+    },
+  {
+    name: 'DumbStation',
+    title: 'Cost of Dump Station:',
+    type: 'string', 
+    },
+    {
+      name: 'TentRVAdditionalPersonRate',
+      title: 'Tent, Rv and Tipi Site Rate:',
+      type: 'string', 
+      },
+      {
+        name: 'Pets',
+        title: 'Pets:',
+        type: 'string', 
+        },
+        {
+          name: 'CabinExtraInfo',
+          title: 'Cabin Extra Info:',
+          type: 'string', 
+          },
+          {
+            name: 'SpaceHeaters',
+            title: 'Space Heaters:',
+            type: 'string', 
+            },
+            {
+              name: 'Additional4',
+              title: 'Aditional Info - this will only be displayed if you enter text:',
+              type: 'string', 
+              },
+{
+  name: 'rentalImage7',
+title: 'Rentals Image right',
+type: 'image',
+},
+{
+  name: 'heading8',
+  title: 'Right Column Heading',
+  type: 'string', 
+  },
+  {
+    name: 'Additional5',
+    title: 'Aditional Info - this will only be displayed if you enter text:',
+    type: 'string', 
+    },
+  {
+    name: 'BoatsandTrollingMotors',
+    title: 'Boats with Trolling Motor:',
+    type: 'string', 
+    },
+    {
+      name: 'PedalBoats',
+      title: 'Pedal Boats:',
+      type: 'string', 
+      },
+      {
+        name: 'KayakOrCanoe',
+        title: 'Kayak or Canoe:',
+        type: 'string', 
+        },
+        {
+          name: 'StandUpPaddleBoard',
+          title: 'Stand Up Paddle Board:',
+          type: 'string', 
+          },
+            {
+              name: 'Additional6',
+              title: 'Aditional Info - this will only be displayed if you enter text:',
+              type: 'string', 
+              },
+{
+  name: 'heading9',
   title: 'Heading six',
   type: 'string',
   description: 'The Second Red Heading on the Page'
@@ -100,7 +250,7 @@ of: [{type: 'block'}],
 description: 'Write the body text here'
 },
 {
-  name: 'heading7',
+  name: 'heading10',
   title: 'Heading seven',
   type: 'string',
   description: 'The Second Red Heading on the Page'
@@ -118,7 +268,7 @@ of: [{type: 'block'}],
 description: 'Write the body text here'
 },
 {
-  name: 'heading8',
+  name: 'heading11',
   title: 'Heading eight',
   type: 'string',
   description: 'The Second Red Heading on the Page'
