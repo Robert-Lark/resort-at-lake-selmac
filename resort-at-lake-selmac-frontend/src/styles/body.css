@@ -21,6 +21,66 @@ img {
     align-items: center;
 }
 
+/* cabins */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.grid-item {
+    width: 100%;
+    min-width: 0;
+}
+
+.grid-item img {
+    width: 100%;
+    min-width: 700px;
+    max-width: 700px;
+    height: auto;
+    display: block;
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 700px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 480px){ 
+    .rentalRates {
+        display: flex;
+    }        
+}
+
+.rentalRates img {
+        min-width: 350px;
+        max-width: 350px;
+}
+
+.rentalRatesContent {
+    min-width: 400px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.span1 {
+padding: 0px 20px;
+margin-top: -8px;
+}
+
+.span2 {
+    padding: 0px 20px;
+    margin-top: -40px;
+    }
+.h3One {
+    margin-top: 40px;
+}
 .large_paragraph {
 text-align: center;
 font-size: 26px;
@@ -62,6 +122,9 @@ font-size: 26px;
     .small_paragraph {
         
         padding: 10px;
+    }
+    .span3 {
+        padding: 0px 20px;
     }
 }
 @media (max-width: 360px) {

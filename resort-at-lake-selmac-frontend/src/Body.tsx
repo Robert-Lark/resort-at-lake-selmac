@@ -5,6 +5,7 @@ import img1 from "../src/assets/rob_img_2.jpeg";
 import teepees from "../src/assets/teepees.jpeg";
 import img3 from "../src/assets/rob_img_4.jpeg";
 import top from "../src/assets/Top.png";
+import map from "../src/assets/map.png";
 import Footer from "./Footer";
 // import Gallery from "./Gallery";
 
@@ -34,27 +35,97 @@ const GET_HOME_QUERY = gql`
       }
       content4Raw
       heading5
-      image5 {
+      rentalImage5 {
+        asset {
+          url
+        }
+      }
+      cabins
+      cabinsContentRaw
+      cabinsImg1 {
+        asset {
+          url
+        }
+      }
+      cabinsImg2 {
+        asset {
+          url
+        }
+      }
+      cabinsImg3 {
+        asset {
+          url
+        }
+      }
+      cabinsImg4 {
+        asset {
+          url
+        }
+      }
+      cabinsImg5 {
+        asset {
+          url
+        }
+      }
+      cabinsImg6 {
         asset {
           url
         }
       }
       content5Raw
       heading6
+      Additional1
+      TentDaily
+      TentWeekly
+      PartialHookupDaily
+      PartialHookupWeekly
+      FullHookupDaily
+      FullHookupWeekly
+      CabinDaily
+      CabinWeekly
+      TipiDaily
+      TipiWeekly
+      Additional2
+      rentalImage6 {
+        asset {
+          url
+        }
+      }
+      heading7
+      Additiona3
+      DumbStation
+      TentRVAdditionalPersonRate
+      Pets
+      CabinExtraInfo
+      SpaceHeaters
+      Additional4
+      rentalImage7 {
+        asset {
+          url
+        }
+      }
+      heading8
+      Additional5
+      BoatsandTrollingMotors
+      PedalBoats
+      KayakOrCanoe
+      StandUpPaddleBoard
+      Additional6
+      heading9
       image6 {
         asset {
           url
         }
       }
       content6Raw
-      heading7
+      heading10
       image7 {
         asset {
           url
         }
       }
       content7Raw
-      heading8
+      heading11
       image8 {
         asset {
           url
@@ -67,7 +138,7 @@ const GET_HOME_QUERY = gql`
 
 function Body() {
   const { loading, data } = useQuery(GET_HOME_QUERY);
-
+  console.log(data);
   const fallbacks = {
     heading1:
       "Located in beautiful southern Oregon just over the California state line is the resort at Lake sell Mac this lake has a great fishing and is stocked annually with trout you can fish largemouth bash catfish bluegill crappy perch and pan fish and Oregon record bass has been caught in lake sell Mac.",
@@ -80,6 +151,8 @@ function Body() {
     heading4: "CAMPSITES",
     content4Raw:
       "Available for reservations are 2 cabins, 3 tipis, a total of 29 RV/tent sites, 11 of those are pull throughs, a 50 amp electricity service, dump station ($5) , wireless internet, bathrooms, hot showers, and laundry facility.  Our prices are very reasonable. Take a look at our rates.",
+    cabins: "CABINS",
+    cabinsContentRaw: "Available for reservations are 2 cabins",
     heading5: "RENTALS",
     content5Raw:
       "We also rent boats with a trolling motor, stand up paddle boards, pedal boats, and kayaks. Our prices are listed on our rates page. There’s more to do than fish! Go play on the frisbee disc golf course, bike or hike the groomed trail around Lake Selmac. Take a day for local attractions like the Oregon Caves, Great Cats World Park, or go wine tasting at Foris Vineyards Winery and Augustino Estate vineyards for a taste of the community.",
@@ -125,7 +198,9 @@ function Body() {
             : fallbacks.content1Raw}
         </p>
 
-        <h2 id="store">{pageData.heading3 ? pageData.heading3 : fallbacks.heading3}</h2>
+        <h2 id="store">
+          {pageData.heading3 ? pageData.heading3 : fallbacks.heading3}
+        </h2>
         <p>
           {contentReturner(pageData.content2Raw)
             ? contentReturner(pageData.content2Raw)
@@ -145,6 +220,80 @@ function Body() {
           src={pageData.image4.asset.url ? pageData.image4.asset.url : teepees}
           alt="lake shot"
         />
+{/* CABINS */}
+        {pageData.cabins ? (
+          <>
+            <h2>{pageData.cabins ? pageData.cabins : fallbacks.cabins}</h2>
+            <p>
+              {contentReturner(pageData.cabinsContentRaw)
+                ? contentReturner(pageData.cabinsContentRaw)
+                : fallbacks.cabinsContentRaw}
+            </p>
+
+            <div className="grid-container">
+              <div className="grid-item">
+                <img
+                  src={
+                    pageData.cabinsImg1.asset.url
+                      ? pageData.cabinsImg1.asset.url
+                      : null
+                  }
+                  alt="lake shot"
+                />
+              </div>
+              <div className="grid-item">
+                <img
+                  src={
+                    pageData.cabinsImg2.asset.url
+                      ? pageData.cabinsImg2.asset.url
+                      : null
+                  }
+                  alt="lake shot"
+                />
+              </div>
+              <div className="grid-item">
+                <img
+                  src={
+                    pageData.cabinsImg3.asset.url
+                      ? pageData.cabinsImg3.asset.url
+                      : null
+                  }
+                  alt="lake shot"
+                />
+              </div>
+              <div className="grid-item">
+                <img
+                  src={
+                    pageData.cabinsImg4.asset.url
+                      ? pageData.cabinsImg4.asset.url
+                      : null
+                  }
+                  alt="lake shot"
+                />
+              </div>
+              <div className="grid-item">
+                <img
+                  src={
+                    pageData.cabinsImg5.asset.url
+                      ? pageData.cabinsImg5.asset.url
+                      : null
+                  }
+                  alt="lake shot"
+                />
+              </div>
+              <div className="grid-item">
+                <img
+                  src={
+                    pageData.cabinsImg6.asset.url
+                      ? pageData.cabinsImg6.asset.url
+                      : null
+                  }
+                  alt="lake shot"
+                />
+              </div>
+            </div>
+          </>
+        ) : null}
         <h2>{pageData.heading5 ? pageData.heading5 : fallbacks.heading5}</h2>
         <p>
           {contentReturner(pageData.content5Raw)
@@ -171,35 +320,127 @@ function Body() {
           <li>Pets welcome (No aggressive dogs allowed)</li>
           <li>Disc golf in walking distance of the Resort</li>
         </ul>
+        <div className="rentalRates">
+          <div className="rentalRatesContent">
+            <img
+              src={
+                pageData.rentalImage5.asset.url
+                  ? pageData.rentalImage5.asset.url
+                  : null
+              }
+              alt="rates"
+              id="rates"
+            />
+            <h2>
+              {pageData.heading6
+                ? pageData.heading6
+                : "Resort at Lake Selmac Rates"}
+            </h2>
+            <h3>{pageData.additional1 ? pageData.additional1 : null}</h3>
+            <span className="span1">
+              {pageData.TentDaily && <h3>Tent Daily: {pageData.TentDaily}</h3>}
+              {pageData.TentWeekly && (
+                <h3>Tent Weekly: {pageData.TentWeekly}</h3>
+              )}
+              <h3>Partial Hookup: {pageData.PartialHookupDaily}</h3>
+              <h3>Partial Hookup Weekly: {pageData.PartialHookupWeekly}</h3>
+              <h3>Full Hookup Daily: {pageData.FullHookupDaily}</h3>
+              <h3>Full Hookup Weekly: {pageData.FullHookupWeekly}</h3>
+              <h3>Cabin Daily: {pageData.CabinDaily}</h3>
+              <h3>Cabin Weekly: {pageData.CabinWeekly}</h3>
+              <h3>Tipi Daily: {pageData.TipiDaily}</h3>
+              <h3>Tipi Weekly: {pageData.TipiWeekly}</h3>
+            </span>
+            <h3>{pageData.additional2 ? pageData.additional2 : null}</h3>
+          </div>
+          <div className="rentalRatesContent">
+            <img
+              src={
+                pageData.rentalImage6.asset.url
+                  ? pageData.rentalImage6.asset.url
+                  : null
+              }
+              alt="rates"
+              id="rates"
+            />
+            <h2>
+              {pageData.heading7
+                ? pageData.heading7
+                : "Extra Fees & Additional Information"}
+            </h2>
+            <h3>{pageData.additiona3 ? pageData.additiona3 : null}</h3>
+            <span className="span2">
+              <h3>Dump Stations: {pageData.DumbStation}</h3>
+              <h3>
+                Tent, RV and Tipi Site Rate:{" "}
+                {pageData.TentRVAdditionalPersonRate}
+              </h3>
+              <h3>Pets: {pageData.Pets}</h3>
+              <h3>Cabin Rate: {pageData.CabinExtraInfo}</h3>
+              <h3>Space Heaters: {pageData.SpaceHeaters}</h3>
+            </span>
+            <h3>{pageData.additional4 ? pageData.additional4 : null}</h3>
+          </div>
+          <div className="rentalRatesContent">
+            <img
+              src={
+                pageData.rentalImage7.asset.url
+                  ? pageData.rentalImage7.asset.url
+                  : null
+              }
+              alt="rates"
+              id="rates"
+            />
+            <h2>
+              {pageData.heading8 ? pageData.heading8 : "Watercraft Rentals"}
+            </h2>
+            <h3 className="h3One">
+              {pageData.additional5
+                ? pageData.additional5
+                : "To rent watercraft's you must show identification to prove you are 18 years or older."}
+            </h3>
+            <span className="span3">
+              <h3>
+                Boats with Trolling Motor: {pageData.BoatsandTrollingMotors}
+              </h3>
+              <h3>Pedal Boats: {pageData.PedalBoats}</h3>
+              <h3>Kayak or Canoe: {pageData.KayakOrCanoe}</h3>
+              <h3>Stand Up Paddle Board: {pageData.StandUpPaddleBoard}</h3>
+            </span>
+            <h3>{pageData.additional6 ? pageData.additional6 : null}</h3>
+          </div>
+        </div>
+        <h2>Map of the Resort at Lake Selmac</h2>
+        <img src={map} alt="map of resort at lake selmac" />
+        <br />
+        <br />
+        <br />
+        <h2>{pageData.heading9 ? pageData.heading9 : fallbacks.heading6}</h2>
         <img
-          src={pageData.image5.asset.url ? pageData.image5.asset.url : null}
+          src={pageData.image6.asset.url ? pageData.image6.asset.url : null}
           alt="rates"
           id="rates"
         />
-        <h2>{pageData.heading6 ? pageData.heading6 : fallbacks.heading6}</h2>
+
         <p>
           {contentReturner(pageData.content6Raw)
             ? contentReturner(pageData.content6Raw)
             : fallbacks.content6Raw}
         </p>
+        <h2 id="fishing">
+          {pageData.heading10 ? pageData.heading10 : fallbacks.heading7}
+        </h2>
         <img
-          src={pageData.image6.asset.url ? pageData.image6.asset.url : img3}
+          src={pageData.image7.asset.url ? pageData.image7.asset.url : img3}
           alt="lake shot"
         />
-        <h2 id="fishing">
-          {pageData.heading7 ? pageData.heading7 : fallbacks.heading7}
-        </h2>
         <p>
           {contentReturner(pageData.content7Raw)
             ? contentReturner(pageData.content7Raw)
             : fallbacks.content7Raw}
         </p>
-        <img
-          src={pageData.image7.asset.url ? pageData.image7.asset.url : img3}
-          alt="lake shot"
-        />
         <h2 id="todo">
-          {pageData.heading8 ? pageData.heading8 : fallbacks.heading8}
+          {pageData.heading11 ? pageData.heading11 : fallbacks.heading8}
         </h2>
         <p>
           {contentReturner(pageData.content8Raw)
