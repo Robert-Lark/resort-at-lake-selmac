@@ -231,7 +231,7 @@ function Body() {
             </p>
 
             <div className="grid-container">
-              <div className="grid-item">
+             { pageData.cabinsImg1 && <div className="grid-item">
                 <img
                   src={
                     pageData.cabinsImg1.asset.url
@@ -240,8 +240,8 @@ function Body() {
                   }
                   alt="lake shot"
                 />
-              </div>
-              <div className="grid-item">
+              </div>}
+              { pageData.cabinsImg2 && <div className="grid-item">
                 <img
                   src={
                     pageData.cabinsImg2.asset.url
@@ -250,8 +250,8 @@ function Body() {
                   }
                   alt="lake shot"
                 />
-              </div>
-              <div className="grid-item">
+              </div>}
+              { pageData.cabinsImg3 && <div className="grid-item">
                 <img
                   src={
                     pageData.cabinsImg3.asset.url
@@ -260,8 +260,8 @@ function Body() {
                   }
                   alt="lake shot"
                 />
-              </div>
-              <div className="grid-item">
+              </div>}
+              { pageData.cabinsImg4 && <div className="grid-item">
                 <img
                   src={
                     pageData.cabinsImg4.asset.url
@@ -270,8 +270,8 @@ function Body() {
                   }
                   alt="lake shot"
                 />
-              </div>
-              <div className="grid-item">
+              </div>}
+              { pageData.cabinsImg5 && <div className="grid-item">
                 <img
                   src={
                     pageData.cabinsImg5.asset.url
@@ -280,8 +280,8 @@ function Body() {
                   }
                   alt="lake shot"
                 />
-              </div>
-              <div className="grid-item">
+              </div>}
+              { pageData.cabinsImg6 && <div className="grid-item">
                 <img
                   src={
                     pageData.cabinsImg6.asset.url
@@ -290,7 +290,7 @@ function Body() {
                   }
                   alt="lake shot"
                 />
-              </div>
+              </div>}
             </div>
           </>
         ) : null}
