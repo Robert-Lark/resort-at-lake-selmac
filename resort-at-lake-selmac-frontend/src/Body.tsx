@@ -175,9 +175,13 @@ function Body() {
 
   function contentReturner(content: any) {
     return content.map((node: any, i: number) => (
-      <p className="small_paragraph" key={i}>
-        {node.children[0].text}
-      </p>
+      <div className="block" key={i}>
+        <p className="small_paragraph">
+          {node.children.map((child: any, j: number) => (
+            child.marks.includes('strong') ? <strong key={j}>{child.text}</strong> : child.text
+          ))}
+        </p>
+      </div>
     ));
   }
 
@@ -336,7 +340,7 @@ function Body() {
                 ? pageData.heading6
                 : "Resort at Lake Selmac Rates"}
             </h2>
-            <h3>{pageData.additional1 ? pageData.additional1 : null}</h3>
+            <h3>{pageData.Additional1 ? pageData.Additional1 : null}</h3>
             <span className="span1">
               {pageData.TentDaily && <h3>Tent Daily: {pageData.TentDaily}</h3>}
               {pageData.TentWeekly && (
@@ -351,7 +355,7 @@ function Body() {
               <h3>Tipi Daily: {pageData.TipiDaily}</h3>
               <h3>Tipi Weekly: {pageData.TipiWeekly}</h3>
             </span>
-            <h3>{pageData.additional2 ? pageData.additional2 : null}</h3>
+            <h3>{pageData.Additional2 ? pageData.Additional2 : null}</h3>
           </div>
           <div className="rentalRatesContent">
             <img
@@ -379,7 +383,7 @@ function Body() {
               <h3>Cabin Rate: {pageData.CabinExtraInfo}</h3>
               <h3>Space Heaters: {pageData.SpaceHeaters}</h3>
             </span>
-            <h3>{pageData.additional4 ? pageData.additional4 : null}</h3>
+            <h3>{pageData.Additional4 ? pageData.Additional4 : null}</h3>
           </div>
           <div className="rentalRatesContent">
             <img
@@ -395,8 +399,8 @@ function Body() {
               {pageData.heading8 ? pageData.heading8 : "Watercraft Rentals"}
             </h2>
             <h3 className="h3One">
-              {pageData.additional5
-                ? pageData.additional5
+              {pageData.Additional5
+                ? pageData.Additional5
                 : "To rent watercraft's you must show identification to prove you are 18 years or older."}
             </h3>
             <span className="span3">
@@ -407,7 +411,7 @@ function Body() {
               <h3>Kayak or Canoe: {pageData.KayakOrCanoe}</h3>
               <h3>Stand Up Paddle Board: {pageData.StandUpPaddleBoard}</h3>
             </span>
-            <h3>{pageData.additional6 ? pageData.additional6 : null}</h3>
+            <h3>{pageData.Additional6 ? pageData.Additional6 : null}</h3>
           </div>
         </div>
         <h2>Map of the Resort at Lake Selmac</h2>
