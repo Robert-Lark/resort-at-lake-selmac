@@ -157,6 +157,24 @@ type: 'array',
 of: [{type: 'block'}],
 description: 'Write the body text here'
 },
+
+{
+  name: 'bulletPoints',
+  title: 'Bullet Points',
+  type: 'object',
+  fields: [
+    {
+      name: 'points',
+      title: 'Points',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        layout: 'list' // This specifies that the array should be displayed as a list
+      }
+    }
+  ]
+},
+
 {
 name: 'rentalImage5',
 title: 'Rentals Image left',
