@@ -34,12 +34,6 @@ const GET_HOME_QUERY = gql`
         }
       }
       content4Raw
-      heading5
-      rentalImage5 {
-        asset {
-          url
-        }
-      }
       cabins
       cabinsContentRaw
       cabinsImg1 {
@@ -68,6 +62,34 @@ const GET_HOME_QUERY = gql`
         }
       }
       cabinsImg6 {
+        asset {
+          url
+        }
+      }
+      dogWash
+      dogWashContentRaw
+      dogWashImg1 {
+        asset {
+          url
+        }
+      }
+      dogWashImg2 {
+        asset {
+          url
+        }
+      }
+      dogWashImg3 {
+        asset {
+          url
+        }
+      }
+      dogWashImg4 {
+        asset {
+          url
+        }
+      }
+      heading5
+      rentalImage5 {
         asset {
           url
         }
@@ -290,6 +312,61 @@ function Body() {
                   src={
                     pageData.cabinsImg6.asset.url
                       ? pageData.cabinsImg6.asset.url
+                      : null
+                  }
+                  alt="lake shot"
+                />
+              </div>}
+            </div>
+          </>
+        ) : null}
+        {/* DOG WASH */}
+
+        {pageData.dogWash ? (
+          <>
+            <h2>{pageData.dogWash ? pageData.dogWash : null}</h2>
+            <p>
+              {contentReturner(pageData.dogWashContentRaw)
+                ? contentReturner(pageData.dogWashContentRaw)
+                : null}
+            </p>
+
+            <div className="grid-container">
+             { pageData.dogWashImg1 && <div className="grid-item">
+                <img
+                  src={
+                    pageData.dogWashImg1.asset.url
+                      ? pageData.dogWashImg1.asset.url
+                      : null
+                  }
+                  alt="lake shot"
+                />
+              </div>}
+              { pageData.dogWashImg2 && <div className="grid-item">
+                <img
+                  src={
+                    pageData.dogWashImg2.asset.url
+                      ? pageData.dogWashImg2.asset.url
+                      : null
+                  }
+                  alt="lake shot"
+                />
+              </div>}
+              { pageData.dogWashImg3 && <div className="grid-item">
+                <img
+                  src={
+                    pageData.dogWashImg3.asset.url
+                      ? pageData.dogWashImg3.asset.url
+                      : null
+                  }
+                  alt="lake shot"
+                />
+              </div>}
+              { pageData.dogWashImg4 && <div className="grid-item">
+                <img
+                  src={
+                    pageData.dogWashImg4.asset.url
+                      ? pageData.dogWashImg4.asset.url
                       : null
                   }
                   alt="lake shot"
