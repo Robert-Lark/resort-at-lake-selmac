@@ -95,6 +95,9 @@ const GET_HOME_QUERY = gql`
         }
       }
       content5Raw
+      bulletPoints {
+        points
+      }
       heading6
       Additional1
       TentDaily
@@ -199,9 +202,13 @@ function Body() {
     return content.map((node: any, i: number) => (
       <div className="block" key={i}>
         <p className="small_paragraph">
-          {node.children.map((child: any, j: number) => (
-            child.marks.includes('strong') ? <strong key={j}>{child.text}</strong> : child.text
-          ))}
+          {node.children.map((child: any, j: number) =>
+            child.marks.includes("strong") ? (
+              <strong key={j}>{child.text}</strong>
+            ) : (
+              child.text
+            )
+          )}
         </p>
       </div>
     ));
@@ -246,7 +253,7 @@ function Body() {
           src={pageData.image4.asset.url ? pageData.image4.asset.url : teepees}
           alt="lake shot"
         />
-{/* CABINS */}
+        {/* CABINS */}
         {pageData.cabins ? (
           <>
             <h2>{pageData.cabins ? pageData.cabins : fallbacks.cabins}</h2>
@@ -257,66 +264,78 @@ function Body() {
             </p>
 
             <div className="grid-container">
-             { pageData.cabinsImg1 && <div className="grid-item">
-                <img
-                  src={
-                    pageData.cabinsImg1.asset.url
-                      ? pageData.cabinsImg1.asset.url
-                      : null
-                  }
-                  alt="lake shot"
-                />
-              </div>}
-              { pageData.cabinsImg2 && <div className="grid-item">
-                <img
-                  src={
-                    pageData.cabinsImg2.asset.url
-                      ? pageData.cabinsImg2.asset.url
-                      : null
-                  }
-                  alt="lake shot"
-                />
-              </div>}
-              { pageData.cabinsImg3 && <div className="grid-item">
-                <img
-                  src={
-                    pageData.cabinsImg3.asset.url
-                      ? pageData.cabinsImg3.asset.url
-                      : null
-                  }
-                  alt="lake shot"
-                />
-              </div>}
-              { pageData.cabinsImg4 && <div className="grid-item">
-                <img
-                  src={
-                    pageData.cabinsImg4.asset.url
-                      ? pageData.cabinsImg4.asset.url
-                      : null
-                  }
-                  alt="lake shot"
-                />
-              </div>}
-              { pageData.cabinsImg5 && <div className="grid-item">
-                <img
-                  src={
-                    pageData.cabinsImg5.asset.url
-                      ? pageData.cabinsImg5.asset.url
-                      : null
-                  }
-                  alt="lake shot"
-                />
-              </div>}
-              { pageData.cabinsImg6 && <div className="grid-item">
-                <img
-                  src={
-                    pageData.cabinsImg6.asset.url
-                      ? pageData.cabinsImg6.asset.url
-                      : null
-                  }
-                  alt="lake shot"
-                />
-              </div>}
+              {pageData.cabinsImg1 && (
+                <div className="grid-item">
+                  <img
+                    src={
+                      pageData.cabinsImg1.asset.url
+                        ? pageData.cabinsImg1.asset.url
+                        : null
+                    }
+                    alt="lake shot"
+                  />
+                </div>
+              )}
+              {pageData.cabinsImg2 && (
+                <div className="grid-item">
+                  <img
+                    src={
+                      pageData.cabinsImg2.asset.url
+                        ? pageData.cabinsImg2.asset.url
+                        : null
+                    }
+                    alt="lake shot"
+                  />
+                </div>
+              )}
+              {pageData.cabinsImg3 && (
+                <div className="grid-item">
+                  <img
+                    src={
+                      pageData.cabinsImg3.asset.url
+                        ? pageData.cabinsImg3.asset.url
+                        : null
+                    }
+                    alt="lake shot"
+                  />
+                </div>
+              )}
+              {pageData.cabinsImg4 && (
+                <div className="grid-item">
+                  <img
+                    src={
+                      pageData.cabinsImg4.asset.url
+                        ? pageData.cabinsImg4.asset.url
+                        : null
+                    }
+                    alt="lake shot"
+                  />
+                </div>
+              )}
+              {pageData.cabinsImg5 && (
+                <div className="grid-item">
+                  <img
+                    src={
+                      pageData.cabinsImg5.asset.url
+                        ? pageData.cabinsImg5.asset.url
+                        : null
+                    }
+                    alt="lake shot"
+                  />
+                </div>
+              )}
+              {pageData.cabinsImg6 && (
+                <div className="grid-item">
+                  <img
+                    src={
+                      pageData.cabinsImg6.asset.url
+                        ? pageData.cabinsImg6.asset.url
+                        : null
+                    }
+                    alt="lake shot"
+                  />
+                </div>
+              )}
             </div>
           </>
         ) : null}
@@ -332,46 +351,54 @@ function Body() {
             </p>
 
             <div className="grid-container">
-             { pageData.dogWashImg1 && <div className="grid-item">
-                <img
-                  src={
-                    pageData.dogWashImg1.asset.url
-                      ? pageData.dogWashImg1.asset.url
-                      : null
-                  }
-                  alt="lake shot"
-                />
-              </div>}
-              { pageData.dogWashImg2 && <div className="grid-item">
-                <img
-                  src={
-                    pageData.dogWashImg2.asset.url
-                      ? pageData.dogWashImg2.asset.url
-                      : null
-                  }
-                  alt="lake shot"
-                />
-              </div>}
-              { pageData.dogWashImg3 && <div className="grid-item">
-                <img
-                  src={
-                    pageData.dogWashImg3.asset.url
-                      ? pageData.dogWashImg3.asset.url
-                      : null
-                  }
-                  alt="lake shot"
-                />
-              </div>}
-              { pageData.dogWashImg4 && <div className="grid-item">
-                <img
-                  src={
-                    pageData.dogWashImg4.asset.url
-                      ? pageData.dogWashImg4.asset.url
-                      : null
-                  }
-                  alt="lake shot"
-                />
-              </div>}
+              {pageData.dogWashImg1 && (
+                <div className="grid-item">
+                  <img
+                    src={
+                      pageData.dogWashImg1.asset.url
+                        ? pageData.dogWashImg1.asset.url
+                        : null
+                    }
+                    alt="lake shot"
+                  />
+                </div>
+              )}
+              {pageData.dogWashImg2 && (
+                <div className="grid-item">
+                  <img
+                    src={
+                      pageData.dogWashImg2.asset.url
+                        ? pageData.dogWashImg2.asset.url
+                        : null
+                    }
+                    alt="lake shot"
+                  />
+                </div>
+              )}
+              {pageData.dogWashImg3 && (
+                <div className="grid-item">
+                  <img
+                    src={
+                      pageData.dogWashImg3.asset.url
+                        ? pageData.dogWashImg3.asset.url
+                        : null
+                    }
+                    alt="lake shot"
+                  />
+                </div>
+              )}
+              {pageData.dogWashImg4 && (
+                <div className="grid-item">
+                  <img
+                    src={
+                      pageData.dogWashImg4.asset.url
+                        ? pageData.dogWashImg4.asset.url
+                        : null
+                    }
+                    alt="lake shot"
+                  />
+                </div>
+              )}
             </div>
           </>
         ) : null}
@@ -381,26 +408,34 @@ function Body() {
             ? contentReturner(pageData.content5Raw)
             : fallbacks.content5Raw}
         </p>
-        <ul>
-          <li>RV park</li>
-          <li>tent camping</li>
-          <li>cabins and teepees available</li>
-          <li>Full service Country Store </li>
-          <li> RV sites with 13 pull-throughs</li>
-          <li>Tent camping sites with electric and water</li>
-          <li>Well-shaded camping sites</li>
-          <li>Wireless Internet service</li>
-          <li>50 amp service</li>
-          <li>Bathrooms with CLEAN hot showers</li>
-          <li>Laundry room</li>
-          <li>Fire rings</li>
-          <li>Picnic tables</li>
-          <li>Volleyball court</li>
-          <li>Tetherball pole</li>
-          <li>Horseshoe pits</li>
-          <li>Pets welcome (No aggressive dogs allowed)</li>
-          <li>Disc golf in walking distance of the Resort</li>
-        </ul>
+        {pageData.bulletPoints.points ? (
+          <ul>
+            {pageData.bulletPoints.points.map(function (point: string, i: number) {
+              return <li key={i}>{point}</li>;
+            })}
+          </ul>
+        ) : (
+          <ul>
+            <li>RV park</li>
+            <li>tent camping</li>
+            <li>cabins and teepees available</li>
+            <li>Full service Country Store </li>
+            <li> RV sites with 13 pull-throughs</li>
+            <li>Tent camping sites with electric and water</li>
+            <li>Well-shaded camping sites</li>
+            <li>Wireless Internet service</li>
+            <li>50 amp service</li>
+            <li>Bathrooms with CLEAN hot showers</li>
+            <li>Laundry room</li>
+            <li>Fire rings</li>
+            <li>Picnic tables</li>
+            <li>Volleyball court</li>
+            <li>Tetherball pole</li>
+            <li>Horseshoe pits</li>
+            <li>Pets welcome (No aggressive dogs allowed)</li>
+            <li>Disc golf in walking distance of the Resort</li>
+          </ul>
+        )}
         <div className="rentalRates">
           <div className="rentalRatesContent">
             <img
