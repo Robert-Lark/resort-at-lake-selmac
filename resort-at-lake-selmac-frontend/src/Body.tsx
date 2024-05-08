@@ -351,7 +351,7 @@ function Body() {
             </p>
 
             <div className="grid-container">
-              {pageData.dogWashImg1 && (
+              {pageData.dogWashImg1?.asset?.url && (
                 <div className="grid-item">
                   <img
                     src={
@@ -363,7 +363,7 @@ function Body() {
                   />
                 </div>
               )}
-              {pageData.dogWashImg2 && (
+              {pageData.dogWashImg2?.asset?.url && (
                 <div className="grid-item">
                   <img
                     src={
@@ -375,7 +375,7 @@ function Body() {
                   />
                 </div>
               )}
-              {pageData.dogWashImg3 && (
+              {pageData.dogWashImg3?.asset?.url && (
                 <div className="grid-item">
                   <img
                     src={
@@ -387,7 +387,7 @@ function Body() {
                   />
                 </div>
               )}
-              {pageData.dogWashImg4 && (
+              {pageData.dogWashImg4?.asset?.url && (
                 <div className="grid-item">
                   <img
                     src={
