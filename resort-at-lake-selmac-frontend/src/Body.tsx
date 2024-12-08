@@ -1,5 +1,6 @@
 import { useQuery, gql } from "@apollo/client";
 import "../src/styles/body.css";
+import fishing_pole from "../src/assets/fishing_pole.png";
 import img1 from "../src/assets/rob_img_2.jpeg";
 // import img2 from "../src/assets/rob_img_3.jpeg";
 import teepees from "../src/assets/teepees.jpeg";
@@ -224,13 +225,17 @@ function Body() {
         <p className="large_paragraph">
           {pageData.heading1 ? pageData.heading1 : fallbacks.heading1}
         </p>
+
+        <a href="https://app.fireflyreservations.com/Reserve/Property/ResortatLakeSelmac?holdExpired=False" className="book-now-button shake-on-hover"><b>Book Now</b></a>
+        <br></br><br></br>
+        <b className="fishing_blurb"><img src={fishing_pole} alt="Largemouth Bass" className="fishingIcon"/>Lake Selmac produced a total of three state-record largemouth bass <img src={fishing_pole} alt="Largemouth Bass" className="fishingIcon"/> <a href="#fishing">Learn More</a></b>
+        <br></br>
         <h2>{pageData.heading2 ? pageData.heading2 : fallbacks.heading2}</h2>
         <p>
           {contentReturner(pageData.content1Raw)
             ? contentReturner(pageData.content1Raw)
             : fallbacks.content1Raw}
         </p>
-
         <h2 id="store">
           {pageData.heading3 ? pageData.heading3 : fallbacks.heading3}
         </h2>
@@ -257,6 +262,7 @@ function Body() {
         {pageData.cabins ? (
           <>
             <h2>{pageData.cabins ? pageData.cabins : fallbacks.cabins}</h2>
+            <a href="https://app.fireflyreservations.com/Reserve/Property/ResortatLakeSelmac?holdExpired=False" className="book-now-button shake-on-hover"><b>Book Now</b></a>
             <p>
               {contentReturner(pageData.cabinsContentRaw)
                 ? contentReturner(pageData.cabinsContentRaw)
@@ -555,6 +561,7 @@ function Body() {
             ? contentReturner(pageData.content7Raw)
             : fallbacks.content7Raw}
         </p>
+        <a href="https://app.fireflyreservations.com/Reserve/Property/ResortatLakeSelmac?holdExpired=False" className="book-now-button shake-on-hover"><b>Book Now</b></a>
         <h2 id="todo">
           {pageData.heading11 ? pageData.heading11 : fallbacks.heading8}
         </h2>

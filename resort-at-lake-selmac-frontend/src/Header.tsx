@@ -27,6 +27,7 @@ function Header() {
       <header className="header">
         <img src={logo} alt="logo" className="logo" />
         <h1>RESORT AT LAKE SELMAC</h1>
+        <a href="https://app.fireflyreservations.com/Reserve/Property/ResortatLakeSelmac?holdExpired=False" className="book-now-button shake-on-hover"><b>Book Now</b></a>
       </header>
       <div className="links">
         <span className="tepee span_1">

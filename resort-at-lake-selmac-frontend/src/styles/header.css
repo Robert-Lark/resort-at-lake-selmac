@@ -1,80 +1,110 @@
 .header_outer {
     display: grid;
-}
-
-.layer_1 {
+  }
+  
+  .layer_1 {
     grid-column: 1;
     grid-row: 1; 
-    
-}
 
-.svg_color {
+  }
+  
+  .svg_color {
     fill: #65E9EE9E;
-}
-
-header {
+  }
+  
+  header {
     grid-column: 1;
     grid-row: 1;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
-}
-
-.logo {
+  }
+  
+  .logo {
     width: 15%;
-}
-
-.links {
+  }
+  
+  .links {
     display: flex;
     justify-content: space-around;
     padding: 20px;
     text-align: center;
     font-size: 26px;
-}
-
-.links a {
+  }
+  
+  .links a {
     color: inherit; /* blue colors for links too */
     text-decoration: inherit;
-}
-
-.tepee img {
+  }
+  
+  .tepee img {
     opacity: 0;
     width: 5%;
-}
-
-.span_1:hover img {
+  }
+  
+  .span_1:hover img {
     opacity: 1
-}
-
-.span_2:hover img {
+  }
+  
+  .span_2:hover img {
     opacity: 1
-}
-
-.span_3:hover img {
+  }
+  
+  .span_3:hover img {
     opacity: 1
-}
-
-.span_4:hover img {
+  }
+  
+  .span_4:hover img {
     opacity: 1
-}
+  }
+  
+  .book-now-button {
+    background-color: #65E9EE;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
 
-@media (max-width: 480px) {
+  .book-now-button.shake-on-hover:hover {
+    animation: shake 0.5s ease-in-out;
+  }
+  
+  @keyframes shake {
+    0% { transform: translateY(0); }
+    10% { transform: translateY(-5px); }
+    20% { transform: translateY(5px); }
+    30% { transform: translateY(-3px); }
+    40% { transform: translateY(3px); }
+    50% { transform: translateY(-2px); }
+    60% { transform: translateY(2px); }
+    70% { transform: translateY(-1px); }
+    80% { transform: translateY(1px); }
+    100% { transform: translateY(0); }
+  }
+  
+  @media (max-width: 480px) {
     .header {
-        padding-left: 10px;
-        margin-bottom: 20px;
+      padding-left: 10px;
+      margin-bottom: 20px;
     }
     .header h1 {
-        font-size: 1rem;
+      font-size: 1rem;
     }
     .links {
-        display: none;
+      display: none;
     }
-}
+  }
+  
+  @media (max-width: 800px) {
 
-@media (max-width: 800px) {
-
-.links {
-    font-size: 1rem;
-}
-}
+    .links {
+      font-size: 1rem;
+    }
+  }
