@@ -1,28 +1,123 @@
-.gallery {
-display: flex;
-justify-content: space-around;
-align-items: center;
-    padding: 25px;
-width: 75%;
+.gallery-container {
+    position: relative;
+    max-width: 800px;
+    width: 100%; /* Added for better scaling */
+    margin: 0 auto;
+    padding: 0 10px; /* Added padding for mobile edges */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
 }
 
-.gallery .image-gallery {
-    width: 75%;
+.gallery-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    width: 100%; /* Ensures image scales properly */
 }
 
-@media (max-width: 1190px) {
-    img {
-        width: 100%
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Ensures buttons stay above image */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.nav-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.indicators {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    gap: 8px;
+    justify-content: center; /* Centers dots on mobile */
+    width: 100%; /* Ensures dots stay contained */
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    min-width: 10px; /* Prevents shrinking on very small screens */
+}
+
+.dot.active {
+    background: #333;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media screen and (max-width: 600px) {
+    .gallery-container {
+        padding: 0 5px; /* Reduced padding for smaller screens */
     }
-    h2 {
-        text-align: center;
+
+    .nav-button {
+        width: 30px; /* Smaller buttons on mobile */
+        height: 30px;
+        font-size: 18px; /* Smaller arrow */
+        padding: 5px;
     }
-    .large_paragraph {
-        font-size: 1.2rem;
-        padding: 10px;
+
+    .prev {
+        left: 5px; /* Closer to edge on mobile */
     }
-    .small_paragraph {
-        
-        padding: 10px;
+
+    .next {
+        right: 5px; /* Closer to edge on mobile */
     }
+
+    .indicators {
+        bottom: 5px; /* Less space at bottom */
+        gap: 6px; /* Tighter spacing for dots */
+    }
+
+    .dot {
+        width: 8px; /* Smaller dots */
+        height: 8px;
+    }
+}
+
+/* Extra small screens (below 400px) */
+@media screen and (max-width: 400px) {
+    .nav-button {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+.galleryContainer {
+    display: flex;
+    flex-direction: column;
 }

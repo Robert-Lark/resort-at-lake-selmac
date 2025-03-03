@@ -2,6 +2,7 @@ import React from "react";
 import "../src/styles/header.css";
 import logo from "../src/assets/logo.png";
 import tepee from "../src/assets/tepee.png";
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
@@ -54,6 +55,11 @@ function Header() {
           <img src={tepee} id="fourth_tepee" alt="tepee" />
         </span>
 
+        <span className="tepee span_4">
+          <img src={tepee} id="fourth_tepee" alt="tepee" />
+          <Link to="/gallery">Photo Gallery</Link>
+          <img src={tepee} id="fourth_tepee" alt="tepee" />
+        </span>
         {/* facebook logo */}
         {/* instagram logo */}
       </div>

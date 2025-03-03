@@ -65,12 +65,30 @@
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 26px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 15%;
+    height: 20%;
+  }
+  @media (max-width: 800px) {
+  .book-now-button {
+    background-color: #65E9EE;
+    color: black;
+    padding: 15px 50px;
+    
+    text-decoration: none;
+    
     font-size: 16px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
   }
+}
 
   .book-now-button.shake-on-hover:hover {
     animation: shake 0.5s ease-in-out;
