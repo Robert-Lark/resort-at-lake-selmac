@@ -616,7 +616,7 @@ function Body() {
           src={pageData.image8.asset.url ? pageData.image8.asset.url : img3}
           alt="lake shot"
         />
-        <div>
+        <div id="contact">
           <ContactForm />
         </div>
       </div>
