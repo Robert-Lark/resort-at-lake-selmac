@@ -27,10 +27,11 @@
   
   .links {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     padding: 20px;
     text-align: center;
-    font-size: 26px;
+    font-size: 22px;
   }
   
   .links a {

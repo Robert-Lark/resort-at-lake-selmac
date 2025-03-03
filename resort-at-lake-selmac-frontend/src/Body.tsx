@@ -230,9 +230,28 @@ function Body() {
           Call or text today to learn more: 541-597-2277
         </p>
 
-        <a href="https://app.fireflyreservations.com/Reserve/Property/ResortatLakeSelmac?holdExpired=False" className="book-now-button shake-on-hover"><b>Book Now</b></a>
-        <br></br><br></br>
-        <b className="fishing_blurb"><img src={fishing_pole} alt="Largemouth Bass" className="fishingIcon"/>Lake Selmac produced a total of three state-record largemouth bass <img src={fishing_pole} alt="Largemouth Bass" className="fishingIcon"/> <a href="#fishing">Learn More</a></b>
+        <a
+          href="https://app.fireflyreservations.com/Reserve/Property/ResortatLakeSelmac?holdExpired=False"
+          className="book-now-button shake-on-hover"
+        >
+          <b>Book Now</b>
+        </a>
+        <br></br>
+        <br></br>
+        <b className="fishing_blurb">
+          <img
+            src={fishing_pole}
+            alt="Largemouth Bass"
+            className="fishingIcon"
+          />
+          Lake Selmac produced a total of three state-record largemouth bass{" "}
+          <img
+            src={fishing_pole}
+            alt="Largemouth Bass"
+            className="fishingIcon"
+          />{" "}
+          <a href="#fishing">Learn More</a>
+        </b>
         <br></br>
         <h2>{pageData.heading2 ? pageData.heading2 : fallbacks.heading2}</h2>
         <p>
@@ -266,7 +285,12 @@ function Body() {
         {pageData.cabins ? (
           <>
             <h2>{pageData.cabins ? pageData.cabins : fallbacks.cabins}</h2>
-            <a href="https://app.fireflyreservations.com/Reserve/Property/ResortatLakeSelmac?holdExpired=False" className="book-now-button shake-on-hover"><b>Book Now</b></a>
+            <a
+              href="https://app.fireflyreservations.com/Reserve/Property/ResortatLakeSelmac?holdExpired=False"
+              className="book-now-button shake-on-hover"
+            >
+              <b>Book Now</b>
+            </a>
             <p>
               {contentReturner(pageData.cabinsContentRaw)
                 ? contentReturner(pageData.cabinsContentRaw)
@@ -354,6 +378,9 @@ function Body() {
         {pageData.dogWash ? (
           <>
             <h2>{pageData.dogWash ? pageData.dogWash : null}</h2>
+            <p className="large_paragraph">
+              Call or text today to learn more: 541-597-2277
+            </p>
             <p>
               {contentReturner(pageData.dogWashContentRaw)
                 ? contentReturner(pageData.dogWashContentRaw)
@@ -420,7 +447,10 @@ function Body() {
         </p>
         {pageData.bulletPoints.points ? (
           <ul>
-            {pageData.bulletPoints.points.map(function (point: string, i: number) {
+            {pageData.bulletPoints.points.map(function (
+              point: string,
+              i: number
+            ) {
               return <li key={i}>{point}</li>;
             })}
           </ul>
@@ -535,6 +565,9 @@ function Body() {
             </span>
             <h3>{pageData.Additional6 ? pageData.Additional6 : null}</h3>
           </div>
+          <p className="large_paragraph">
+            Call or text today to learn more: 541-597-2277
+          </p>
         </div>
         <h2>Map of the Resort at Lake Selmac</h2>
         <img src={map} alt="map of resort at lake selmac" />
@@ -565,7 +598,12 @@ function Body() {
             ? contentReturner(pageData.content7Raw)
             : fallbacks.content7Raw}
         </p>
-        <a href="https://app.fireflyreservations.com/Reserve/Property/ResortatLakeSelmac?holdExpired=False" className="book-now-button shake-on-hover"><b>Book Now</b></a>
+        <a
+          href="https://app.fireflyreservations.com/Reserve/Property/ResortatLakeSelmac?holdExpired=False"
+          className="book-now-button shake-on-hover"
+        >
+          <b>Book Now</b>
+        </a>
         <h2 id="todo">
           {pageData.heading11 ? pageData.heading11 : fallbacks.heading8}
         </h2>
@@ -579,10 +617,10 @@ function Body() {
           alt="lake shot"
         />
         <div>
-        <ContactForm />
+          <ContactForm />
+        </div>
       </div>
-      </div>
-      
+
       <Footer loading={loading} />
     </div>
   );
