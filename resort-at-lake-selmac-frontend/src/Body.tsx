@@ -226,6 +226,9 @@ function Body() {
         <p className="large_paragraph">
           {pageData.heading1 ? pageData.heading1 : fallbacks.heading1}
         </p>
+        <p className="large_paragraph">
+          Call or text today to learn more: 541-597-2277
+        </p>
 
         <a href="https://app.fireflyreservations.com/Reserve/Property/ResortatLakeSelmac?holdExpired=False" className="book-now-button shake-on-hover"><b>Book Now</b></a>
         <br></br><br></br>
