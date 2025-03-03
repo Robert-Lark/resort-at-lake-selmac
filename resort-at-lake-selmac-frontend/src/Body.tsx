@@ -8,6 +8,7 @@ import img3 from "../src/assets/rob_img_4.jpeg";
 import top from "../src/assets/Top.png";
 import map from "../src/assets/map.png";
 import Footer from "./Footer";
+import ContactForm from "./Form";
 // import Gallery from "./Gallery";
 
 const GET_HOME_QUERY = gql`
@@ -574,8 +575,11 @@ function Body() {
           src={pageData.image8.asset.url ? pageData.image8.asset.url : img3}
           alt="lake shot"
         />
+        <div>
+        <ContactForm />
       </div>
-      {/* <Gallery /> */}
+      </div>
+      
       <Footer loading={loading} />
     </div>
   );
