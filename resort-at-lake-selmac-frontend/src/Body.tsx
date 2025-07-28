@@ -238,6 +238,19 @@ function Body() {
         </a>
         <br></br>
         <br></br>
+        <div className="video-responsive">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/XUxeijsET-g?si=zreiJ9FYUhBreHwn"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
+        <br></br>
+        <br></br>
         <b className="fishing_blurb">
           <img
             src={fishing_pole}

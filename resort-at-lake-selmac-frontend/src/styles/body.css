@@ -167,4 +167,8 @@ font-size: 26px;
     }
 }
 
-
+@media (max-width: 768px) {
+    .video-responsive iframe {
+       width: 100%;
+    }
+  }
