@@ -1,6 +1,6 @@
 import React from "react";
 import "../src/styles/header.css";
-import logo from "../src/assets/logo.png";
+import logo from "../src/assets/logo.webp";
 import tepee from "../src/assets/tepee.png";
 import { Link } from 'react-router-dom';
 
